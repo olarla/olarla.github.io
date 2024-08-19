@@ -1,0 +1,20 @@
+/*this is a universal selector*/
+
+p {
+  font-size: medium;
+}
+
+p,
+h3 {
+  color: yellow;
+}
+
+p > strong {
+  color: hotpink;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
