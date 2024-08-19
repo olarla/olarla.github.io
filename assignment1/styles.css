@@ -1,14 +1,13 @@
-/* General Reset */
+/* General - apply to all elements  for consistent styling */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body Styles */
+/* Using same font with the chosen website, but considered other things for better readability. */
 body {
   font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
   background-color: black;
   color: #f0f0f0;
   line-height: 1.6;
@@ -23,7 +22,7 @@ body {
   padding: 20px;
 }
 
-/* Header Styles */
+/* Also used exactly same color palette of the chosen website */
 header {
   background-color: #ffa441;
   color: #000;
@@ -33,11 +32,9 @@ header {
   line-height: 0.8;
 }
 
+/* Makes the header text large to capture attention and establish a strong visual presence. */
 header h1 {
-  font-family: "Helvetica Neue";
   font-size: 10rem;
-  transform-origin: top; /* 변환 기준점 설정 */
-  transition: transform 0.8s ease-out; /* 변환 애니메이션 설정 */
 }
 
 header p {
@@ -46,6 +43,7 @@ header p {
   padding-right: 40px;
 }
 
+/* Transforms text to uppercase for consistency with header style and emphasis. */
 h2 {
   font-size: 6rem;
   text-transform: uppercase;
@@ -57,26 +55,26 @@ h2 {
   margin: 100px;
 }
 
+/* Ensures that long word('introduction') break properly to avoid layout issues. */
 #wordbreak {
   word-break: break-word;
 }
 
 .responses {
-  display: flex; /* 플렉스 컨테이너로 설정 */
-  justify-content: space-around; /* 자식 요소들 사이에 공간 배분 */
-  flex-wrap: wrap; /* 필요 시 다음 줄로 넘기기 */
+  display: flex; /* Uses flexbox layout to organize response articles in a flexible and responsive manner. */
+  justify-content: space-around;
+  flex-wrap: wrap; /* Wrap onto the next line, maintaining a responsive layout. */
 }
 
-/* 자식 요소들에 대한 스타일 */
 .responses article {
-  flex: 1; /* 각 자식 요소가 동일한 너비를 가지도록 설정 */
-  flex-basis: 38%;
+  flex: 1; /* Ensures each article has equal width within the container. */
+  flex-basis: 38%; /* For the better readability. */
   margin-left: 110px;
-  margin-right: 110px; /* 자식 요소들 사이의 간격 */
+  margin-right: 110px;
   margin-bottom: 70px;
   background-color: #4596ff;
   padding: 50px;
-  transition: transform 0.3 ease;
+  transition: transform 0.3 ease; /* Adds a smooth scaling effect on hover to enhance interactivity as similar as the chosen web page. */
 }
 
 .responses article :hover {
@@ -103,22 +101,21 @@ h2 {
 }
 
 blockquote {
-  font-family: Arial;
+  font-family: Arial; /* Uses a simple font for blockquotes for differentiation. */
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
 }
 
 img {
-  padding: 10px;
+  padding: 10px; /* Adds padding around images to create space */
 }
 
-/* Footer Styles */
 footer {
-  background-color: #ffa441;
+  background-color: #ffa441; /* Uses the same bright orange background as the header for consistency. */
   color: #000;
   text-align: center;
   padding: 20px;
   margin-top: 20px;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Prevents the footer from shrinking when the content height changes. */
 }
