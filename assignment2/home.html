@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armageddon-Aespa Music Album</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Fixed navigation bar for easy site navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <!-- Logo for branding -->
+        <img src="img/1.png" alt="Logo" class="logo" />
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <!-- Link to scroll back to the home section -->
+            <a href="#" class="nav-link button-gradient">Home</a>
+          </li>
+          <li class="nav-item">
+            <!-- Link to scroll down to the music section -->
+            <a href="#music-section" class="nav-link button-gradient">Music</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Section containing the main CD player image -->
+    <section id="home" class="section">
+      <div class="main-image-container cd-player">
+        <img
+          src="img/cdplayer.png"
+          alt="CD Player with logo and text"
+          class="combined-image"
+        />
+      </div>
+    </section>
+
+    <!-- Visual effect image for aesthetic appeal -->
+    <div class="eye-image">
+      <img src="img/eye.png" alt="Eye with hover effect" class="eye-image" />
+    </div>
+
+    <!-- Glitter effect for aesthetic purposes -->
+    <div class="glitter-effect">
+      <img src="img/glitter.png" alt="Glitter Effect" class="glitter-image" />
+    </div>
+
+    <!-- Year image representing the album release year -->
+    <div class="year-image">
+      <img src="img/2024.png" alt="2024 Armageddon" class="year-image" />
+    </div>
+
+    <!-- Track list container, allowing users to select specific tracks -->
+    <div class="playlist-container">
+      <div class="track-list">
+        <!-- Each track item triggers the changeTrack function to switch the song -->
+        <p class="track-item" onclick="changeTrack(1)">1 - Supernova</p>
+        <p class="track-item" onclick="changeTrack(2)">2 - Armageddon</p>
+        <p class="track-item" onclick="changeTrack(3)">3 - Set the Tone</p>
+        <p class="track-item" onclick="changeTrack(4)">4 - Mine</p>
+        <p class="track-item" onclick="changeTrack(5)">5 - Licorice</p>
+        <p class="track-item" onclick="changeTrack(6)">6 - BAHAMA</p>
+        <p class="track-item" onclick="changeTrack(7)">7 - Long Chat(#♥)</p>
+        <p class="track-item" onclick="changeTrack(8)">8 - Prologue</p>
+        <p class="track-item" onclick="changeTrack(9)">9 - Live My Life</p>
+        <p class="track-item" onclick="changeTrack(10)">10 - Melody</p>
+      </div>
+    </div>
+
+    <!-- Decorative human image positioned on the right -->
+    <div class="human-image">
+      <img src="img/human.png" alt="Human Circle Image" class="human-message" />
+    </div>
+
+    <!-- Main music section containing the CD display and track controls -->
+    <div id="music-section" class="music-section">
+      <div class="cd-container">
+        <!-- Each CD image corresponds to a track, only one is visible at a time -->
+        <div class="cd-half" id="cd1">
+          <img src="img/supernova.png" alt="CD Supernova Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd2">
+          <img src="img/armageddon.png" alt="CD Armageddon Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd3">
+          <img src="img/setthetone.png" alt="CD Set The Tone Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd4">
+          <img src="img/mine.png" alt="CD Mine Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd5">
+          <img src="img/licorice.png" alt="CD Licorice Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd6">
+          <img src="img/bahama.png" alt="CD BAHAMA Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd7">
+          <img src="img/longchat.png" alt="CD Long Chat Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd8">
+          <img src="img/prologue.png" alt="CD Prologue Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd9">
+          <img src="img/livemylife.png" alt="CD Live My Life Image" />
+        </div>
+        <div class="cd-half hidden-cd" id="cd10">
+          <img src="img/melody.png" alt="CD Melody Image" />
+        </div>
+      </div>
+
+      <!-- Track information and control buttons -->
+      <div class="track-info">
+        <p class="track-number">Track 1</p>
+        <p class="track-title">Supernova</p>
+
+        <!-- Music player control buttons -->
+        <div class="control-buttons">
+          <button class="rewind-btn">⏪</button>
+          <button class="play-button" id="play-pause-btn">▶️</button>
+          <button class="fast-forward-btn">⏩</button>
+          <button class="volume-down-btn">🔉</button>
+          <button class="volume-up-btn">🔊</button>
+          <button class="repeat-btn">🔁</button>
+        </div>
+
+        <!-- Progress bar to show the current playback progress -->
+        <div class="progress-container">
+          <input type="range" id="progress-bar" value="0" min="0" step="1" />
+        </div>
+
+        <!-- Audio player element, hidden by default -->
+        <audio id="audio-player" src="music/supernova.mp3" hidden></audio>
+      </div>
+    </div>
+
+    <!-- Breaking news image, related to Aespa's album comeback -->
+    <div class="breaking-news">
+      <img
+        src="img/breaking.png"
+        alt="Breaking News Image"
+        class="breaking-news-image"
+      />
+    </div>
+  </body>
+
+  <!-- Footer section with copyright information -->
+  <footer class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2024 SM ENTERTAINMENT Co., Ltd. ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+</html>
