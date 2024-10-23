@@ -1,78 +1,59 @@
-let currentLevel = 1;
-let health = 100; // Health starts at 100
-let exp = 0; // Experience starts at 0
-const maxHealth = 100;
-const maxExp = 100;
+// 기본 배경들
+const backgrounds = {
+  bg1: "image/bg1.png",
+  bg2: "image/bg2.png",
+  bg3: "image/bg3.png",
+  bg4: "image/bg4.png",
+};
 
-const characterElement = document.getElementById("current-character");
-const backgroundElement = document.getElementById("current-bg");
-const healthFill = document.getElementById("health-fill");
-const expFill = document.getElementById("exp-fill");
+// 체력 및 경험치 변수
+let health = 100;
+let exp = 0;
 
-// Array of background and character image paths
-const backgrounds = [
-  "image/bg1.png",
-  "image/bg2.png",
-  "image/bg3.png",
-  "image/bg4.png",
-];
-const characters = [
-  "image/lv1.png",
-  "image/lv2.png",
-  "image/lv3.png",
-  "image/lv4.png",
-];
-
-// Sound elements
-const bgMusic = document.getElementById("bg-music");
-const danceSound = document.getElementById("sound-dance");
-const tvSound = document.getElementById("sound-tv");
-const recordSound = document.getElementById("sound-record");
-const concertSound = document.getElementById("sound-concert");
-
-// Play background music
-bgMusic.play();
-
-// Function to update health and experience bars
+// 체력과 경험치 바 업데이트 함수
 function updateBars() {
-  healthFill.style.width = (health / maxHealth) * 100 + "%";
-  expFill.style.width = (exp / maxExp) * 100 + "%";
+  document.querySelector(".health-inner").style.width = health + "%";
+  document.querySelector(".exp-inner").style.width = exp + "%";
 }
 
-// Function to change background and play sound
-function changeBackground(index, sound) {
-  backgroundElement.src = backgrounds[index];
-  sound.play();
-}
+// 버튼 이벤트 설정
+document.getElementById("dance-button").addEventListener("click", function () {
+  document.querySelector(".background").src = backgrounds.bg1;
+  health -= 20; // 체력 감소
+  exp += 15; // 경험치 증가
+  if (health < 0) health = 0;
+  if (exp > 100) exp = 100;
+  updateBars(); // 체력 및 경험치 업데이트
+});
 
-// Button listeners
-document.getElementById("dance-button").addEventListener("click", () => {
-  changeBackground(0, danceSound);
+document.getElementById("tv-button").addEventListener("click", function () {
+  document.querySelector(".background").src = backgrounds.bg2;
   health -= 10;
-  exp += 15;
-  updateBars();
-});
-
-document.getElementById("tv-button").addEventListener("click", () => {
-  changeBackground(1, tvSound);
-  health -= 5;
   exp += 10;
+  if (health < 0) health = 0;
+  if (exp > 100) exp = 100;
   updateBars();
 });
 
-document.getElementById("recorder-button").addEventListener("click", () => {
-  changeBackground(2, recordSound);
-  health -= 20;
-  exp += 25;
-  updateBars();
-});
-
-document.getElementById("concert-button").addEventListener("click", () => {
-  changeBackground(3, concertSound);
+document.getElementById("record-button").addEventListener("click", function () {
+  document.querySelector(".background").src = backgrounds.bg3;
   health -= 15;
   exp += 20;
+  if (health < 0) health = 0;
+  if (exp > 100) exp = 100;
   updateBars();
 });
 
-// Initialize bars
+document
+  .getElementById("concert-button")
+  .addEventListener("click", function () {
+    document.querySelector(".background").src = backgrounds.bg4;
+    health -= 25;
+    exp += 30;
+    if (health < 0) health = 0;
+    if (exp > 100) exp = 100;
+    updateBars();
+  });
+
+// 초기 상태바 설정
 updateBars();

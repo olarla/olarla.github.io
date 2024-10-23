@@ -1,0 +1,117 @@
+/* 부모 요소 (이미지 상자) */
+.imgbox {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 배경 이미지 */
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 캐릭터 이미지 */
+.character {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+}
+
+/* 상단 상태바 (체력/경험치) */
+.status-bar {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* 체력 바 */
+.health-bar {
+  position: absolute;
+  width: 42%;
+  height: 20px;
+  left: 12%;
+  top: 20px;
+  background-color: #ffcccc;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.health-inner {
+  background-color: #ff0000;
+  height: 100%;
+  width: 100%; /* 초기 체력 */
+}
+
+/* 경험치 바 */
+.exp-bar {
+  position: absolute;
+  width: 42%;
+  height: 20px;
+  right: 12%;
+  top: 20px;
+  background-color: #ccffcc;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.exp-inner {
+  background-color: #00ff00;
+  height: 100%;
+  width: 0%; /* 초기 경험치 */
+}
+
+/* 하단 바 */
+.bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 120px;
+}
+
+.bottom-background {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2; /* 버튼을 바 위로 올림 */
+}
+
+button img {
+  width: 80px;
+  height: 80px;
+  margin: 0 20px;
+}

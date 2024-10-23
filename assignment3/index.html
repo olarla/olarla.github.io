@@ -7,63 +7,45 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="game-container">
-      <!-- TV Frame -->
-      <div id="tv-frame">
-        <!-- Inside the TV: Background and Character -->
-        <div id="tv-screen">
-          <img src="image/bg1.png" alt="Background" id="current-bg" />
-          <img src="image/lv1.png" alt="Character" id="current-character" />
+    <div class="imgbox">
+      <!-- 배경 이미지 -->
+      <img src="image/bg1.png" alt="TV Frame" class="background" />
+
+      <!-- 캐릭터 이미지 -->
+      <img
+        src="image/lv1.png"
+        alt="Character"
+        class="character"
+        id="current-character"
+      />
+
+      <!-- 상태바 (체력 및 경험치) -->
+      <div class="status-bar">
+        <div class="health-bar">
+          <div class="health-inner"></div>
+        </div>
+        <div class="exp-bar">
+          <div class="exp-inner"></div>
         </div>
       </div>
 
-      <!-- Top bar for health and experience -->
-      <div id="status-bar">
-        <img src="image/lvbar.png" alt="Status Bar" id="exp-bar" />
-        <div id="health-bar">
-          <div id="health-fill"></div>
-        </div>
-        <div id="exp-bar">
-          <div id="exp-fill"></div>
-        </div>
+      <!-- 하단 버튼바 -->
+      <div class="bottom-bar">
+        <button id="dance-button">
+          <img src="image/dancebutton.png" alt="Dance Button" />
+        </button>
+        <button id="tv-button">
+          <img src="image/tvbutton.png" alt="TV Button" />
+        </button>
+        <button id="record-button">
+          <img src="image/recorderbutton.png" alt="Record Button" />
+        </button>
+        <button id="concert-button">
+          <img src="image/concertbutton.png" alt="Concert Button" />
+        </button>
       </div>
-
-      <!-- Bottom bar and buttons -->
-      <div id="bottom-bar">
-        <img src="image/bottombar.png" alt="Bottom Bar" />
-        <div id="buttons">
-          <button id="dance-button">
-            <img src="image/dancebutton.png" alt="Dance" />
-          </button>
-          <button id="tv-button">
-            <img src="image/tvbutton.png" alt="TV" />
-          </button>
-          <button id="recorder-button">
-            <img src="image/recorderbutton.png" alt="Recorder" />
-          </button>
-          <button id="concert-button">
-            <img src="image/concertbutton.png" alt="Concert" />
-          </button>
-        </div>
-      </div>
-
-      <!-- Background music and sound effects -->
-      <audio id="bg-music" loop>
-        <source src="bg-music.mp3" type="audio/mp3" />
-      </audio>
-      <audio id="sound-dance">
-        <source src="dance-sound.mp3" type="audio/mp3" />
-      </audio>
-      <audio id="sound-tv">
-        <source src="tv-laugh.mp3" type="audio/mp3" />
-      </audio>
-      <audio id="sound-record">
-        <source src="record-song.mp3" type="audio/mp3" />
-      </audio>
-      <audio id="sound-concert">
-        <source src="concert-cheer.mp3" type="audio/mp3" />
-      </audio>
     </div>
-    <script src="script.js"></script>
+
+    <script src="scripts.js"></script>
   </body>
 </html>
