@@ -3,25 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scroll and Hover Game Prototype</title>
+    <title>Idol Raising Simulation</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="game-container">
-      <div class="game-map">
-        <div class="game-element" id="element1">
-          <p>Treasure Chest</p>
-          <div class="info-box">Contains gold and gems!</div>
-        </div>
-        <div class="game-element" id="element2">
-          <p>Mysterious Cave</p>
-          <div class="info-box">Enter to discover secrets!</div>
-        </div>
-        <div class="game-element" id="element3">
-          <p>Ancient Tree</p>
-          <div class="info-box">Grants wisdom to those who listen.</div>
+    <div id="game-container">
+      <!-- TV Frame -->
+      <div id="tv-frame">
+        <!-- Inside the TV: Background and Character -->
+        <div id="tv-screen">
+          <img src="image/bg1.png" alt="Background" id="current-bg" />
+          <img src="image/lv1.png" alt="Character" id="current-character" />
         </div>
       </div>
+
+      <!-- Top bar for health and experience -->
+      <div id="status-bar">
+        <img src="image/lvbar.png" alt="Status Bar" id="exp-bar" />
+        <div id="health-bar">
+          <div id="health-fill"></div>
+        </div>
+        <div id="exp-bar">
+          <div id="exp-fill"></div>
+        </div>
+      </div>
+
+      <!-- Bottom bar and buttons -->
+      <div id="bottom-bar">
+        <img src="image/bottombar.png" alt="Bottom Bar" />
+        <div id="buttons">
+          <button id="dance-button">
+            <img src="image/dancebutton.png" alt="Dance" />
+          </button>
+          <button id="tv-button">
+            <img src="image/tvbutton.png" alt="TV" />
+          </button>
+          <button id="recorder-button">
+            <img src="image/recorderbutton.png" alt="Recorder" />
+          </button>
+          <button id="concert-button">
+            <img src="image/concertbutton.png" alt="Concert" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Background music and sound effects -->
+      <audio id="bg-music" loop>
+        <source src="bg-music.mp3" type="audio/mp3" />
+      </audio>
+      <audio id="sound-dance">
+        <source src="dance-sound.mp3" type="audio/mp3" />
+      </audio>
+      <audio id="sound-tv">
+        <source src="tv-laugh.mp3" type="audio/mp3" />
+      </audio>
+      <audio id="sound-record">
+        <source src="record-song.mp3" type="audio/mp3" />
+      </audio>
+      <audio id="sound-concert">
+        <source src="concert-cheer.mp3" type="audio/mp3" />
+      </audio>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
