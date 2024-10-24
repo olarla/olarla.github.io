@@ -32,7 +32,7 @@
   left: 10.1%; /* 체력바를 화면의 왼쪽 5%에 위치 */
   width: 2.1%;
   height: 46%; /* 체력바 높이를 화면 비율에 맞게 50%로 */
-  background-color: #ff009f;
+  background-color: transparent;
   z-index: 3;
   border-radius: 14px;
   overflow: hidden;
@@ -54,7 +54,7 @@
   right: 10.4%; /* 경험치바를 화면의 오른쪽 5%에 위치 */
   width: 2.1%;
   height: 46%;
-  background-color: yellow;
+  background-color: transparent;
   z-index: 3;
   border-radius: 14px;
   overflow: hidden;

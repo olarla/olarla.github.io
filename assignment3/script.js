@@ -75,7 +75,7 @@ function updateStats(healthChange, expChange) {
     exp = 0; // 경험치가 100이 넘으면 다시 0으로
     levelUp(); // 레벨업 호출
   }
-  expInner.style.height = exp + "%"; // 경험치 게이지 업데이트
+  expInner.styles.height = exp + "%"; // 경험치 게이지 업데이트
 }
 
 // 레벨업 함수
