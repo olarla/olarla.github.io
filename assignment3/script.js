@@ -1,59 +1,47 @@
-// 기본 배경들
-const backgrounds = {
-  bg1: "image/bg1.png",
-  bg2: "image/bg2.png",
-  bg3: "image/bg3.png",
-  bg4: "image/bg4.png",
-};
-
-// 체력 및 경험치 변수
+// 초기 설정: 체력, 경험치, 레벨
 let health = 100;
-let exp = 0;
+let experience = 100;
+let level = 1;
 
-// 체력과 경험치 바 업데이트 함수
+// 체력 및 경험치 바 업데이트 함수
 function updateBars() {
+  // 체력 바 너비 변경
   document.querySelector(".health-inner").style.width = health + "%";
-  document.querySelector(".exp-inner").style.width = exp + "%";
+  // 경험치 바 너비 변경
+  document.querySelector(".exp-inner").style.width = experience + "%";
+  // 레벨 텍스트 업데이트
+  document.querySelector(".level-text").textContent = "Lv." + level;
 }
 
-// 버튼 이벤트 설정
+// 배경 변경 함수
+function changeBackground(newBg) {
+  document.getElementById("background").src = newBg;
+}
+
+// 버튼 이벤트 리스너 추가
 document.getElementById("dance-button").addEventListener("click", function () {
-  document.querySelector(".background").src = backgrounds.bg1;
-  health -= 20; // 체력 감소
-  exp += 15; // 경험치 증가
-  if (health < 0) health = 0;
-  if (exp > 100) exp = 100;
-  updateBars(); // 체력 및 경험치 업데이트
+  health = Math.max(0, health - 20); // 체력 감소 (최소 0)
+  experience = Math.min(100, experience + 15); // 경험치 증가 (최대 100)
+  updateBars();
 });
 
 document.getElementById("tv-button").addEventListener("click", function () {
-  document.querySelector(".background").src = backgrounds.bg2;
-  health -= 10;
-  exp += 10;
-  if (health < 0) health = 0;
-  if (exp > 100) exp = 100;
-  updateBars();
+  document.getElementById("background").src = "image/bg2.png";
 });
 
 document.getElementById("record-button").addEventListener("click", function () {
-  document.querySelector(".background").src = backgrounds.bg3;
-  health -= 15;
-  exp += 20;
-  if (health < 0) health = 0;
-  if (exp > 100) exp = 100;
-  updateBars();
+  document.getElementById("background").src = "image/bg3.png";
 });
 
 document
   .getElementById("concert-button")
   .addEventListener("click", function () {
-    document.querySelector(".background").src = backgrounds.bg4;
-    health -= 25;
-    exp += 30;
-    if (health < 0) health = 0;
-    if (exp > 100) exp = 100;
-    updateBars();
+    document.getElementById("background").src = "image/bg4.png";
   });
 
-// 초기 상태바 설정
-updateBars();
+document.getElementById("sleep-button").addEventListener("click", function () {
+  document.getElementById("background").src = "image/bg1.png"; // Reset to original background
+});
+
+// 게임 초기화
+updateBars(); // 처음에 체력 및 경험치 바를 가득 채운 상태로 시작

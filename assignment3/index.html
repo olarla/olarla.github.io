@@ -9,34 +9,32 @@
   <body>
     <div class="imgbox">
       <!-- 배경 이미지 -->
-      <img src="image/bg1.png" alt="Game Background" class="background" />
+      <img
+        src="image/bg1.png"
+        alt="Game Background"
+        id="background"
+        class="background"
+      />
 
       <!-- 상단 상태바 (체력/경험치) -->
       <div class="status-bar">
-        <img src="image/lvbar.png" alt="Status Bar" class="status-image" />
         <div class="health-bar">
           <div class="health-inner"></div>
+          <!-- 체력 바 -->
         </div>
         <div class="exp-bar">
           <div class="exp-inner"></div>
+          <!-- 경험치 바 -->
         </div>
+        <div class="level-text">Lv.1</div>
+        <!-- 레벨 텍스트 -->
       </div>
 
       <!-- 캐릭터 이미지 -->
-      <img
-        src="image/lv1.png"
-        alt="Character"
-        class="character"
-        id="current-character"
-      />
+      <img src="image/lv1.png" alt="Character" id="character" />
 
-      <!-- 하단 바 -->
+      <!-- 버튼들 -->
       <div class="bottom-bar">
-        <img
-          src="image/bottombar.png"
-          alt="Bottom Bar"
-          class="bottom-background"
-        />
         <button id="dance-button">
           <img src="image/dancebutton.png" alt="Dance Button" />
         </button>
@@ -48,6 +46,9 @@
         </button>
         <button id="concert-button">
           <img src="image/concertbutton.png" alt="Concert Button" />
+        </button>
+        <button id="sleep-button">
+          <img src="image/sleepbutton.png" alt="Sleep Button" />
         </button>
       </div>
     </div>
