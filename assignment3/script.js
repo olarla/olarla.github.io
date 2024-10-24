@@ -67,7 +67,7 @@ function updateStats(healthChange, expChange) {
   health += healthChange;
   if (health < 0) health = 0; // 체력이 0 아래로 떨어지지 않도록
   if (health > 100) health = 100; // 체력이 100 이상으로 올라가지 않도록
-  healthInner.style.height = health + "%"; // 체력 게이지 업데이트
+  healthInner.styles.height = health + "%"; // 체력 게이지 업데이트
 
   // 경험치 업데이트
   exp += expChange;
