@@ -16,6 +16,148 @@
   object-fit: cover; /* 화면 비율에 맞춰 이미지를 꽉 채움 */
 }
 
+/* 팝업 창 기본 스타일 */
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 29%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* 팝업 내부 이미지 */
+.start-image {
+  width: 170%;
+  height: auto;
+}
+
+/* 시작 버튼과 How To 버튼 */
+.start-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* Play 버튼 위치 */
+#play-button {
+  position: absolute;
+  bottom: 17%; /* 팝업 내부에서 아래쪽에 배치 */
+  left: 50%; /* Play 버튼을 중앙에 배치 */
+}
+
+/* How To 버튼 위치 */
+#how-button {
+  position: absolute;
+  bottom: 17%; /* 팝업 내부에서 Play 버튼과 동일한 높이에 배치 */
+  left: 100%; /* Play 버튼 오른쪽에 배치 */
+}
+
+.start-button img {
+  width: 12vw; /* 버튼 이미지 크기 */
+  height: auto;
+}
+
+/* Hover 애니메이션 효과 */
+.start-button:hover img {
+  animation: sparkle 0.6s infinite alternate;
+  opacity: 0.9;
+}
+
+/* 반짝임 애니메이션 */
+@keyframes sparkle {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.5); /* 밝기가 살짝 증가 */
+  }
+}
+
+/* 오디오 메시지 및 버튼 스타일 */
+.audio-prompt {
+  position: absolute;
+  bottom: 7%;
+  left: 48.5%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 5;
+  font-size: 2.5vh;
+}
+
+.audio-button {
+  position: absolute;
+  top: 22%;
+  left: 100%;
+  transform: translateX(15%);
+  background-color: #ff009f;
+  color: #333;
+  border: none;
+  padding: 0.5vw;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 2.5vw; /* 버튼 크기 설정 */
+  height: 2.5vw; /* 버튼 크기 설정 (정사각형) */
+}
+
+/* How To 팝업 스타일 */
+.popup-content {
+  position: absolute;
+  transform: translate(-18%, -48%);
+  width: 60vw;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.8); /* 배경 박스 추가 */
+  padding: 2vw;
+  border-radius: 15px;
+  box-shadow: 0 8px 8px #ff009f;
+  text-align: center;
+  color: #333;
+  margin-bottom: 2vh;
+}
+
+.popup-content h2 {
+  font-size: 3.2vw;
+  margin-bottom: 2vh;
+  color: #ff1493;
+}
+
+.popup-content p {
+  font-size: 1.1vw;
+  margin-bottom: 2vh;
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2vw;
+}
+
+.popup-content ul li {
+  margin-bottom: 1vh;
+  text-align: left;
+  margin-bottom: 2vh;
+}
+
+/* X 버튼 스타일 */
+.popup-close {
+  position: absolute;
+  top: -35vw;
+  right: 1vw;
+  background: none;
+  border: none;
+  font-size: 2.2vw;
+  color: #ff009f;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+  color: #e6008e;
+}
+
 /* 캐릭터 이미지 위치 */
 #character {
   position: absolute;
@@ -82,6 +224,32 @@
   z-index: 4;
 }
 
+/* 레벨업 시 글리터 효과 */
+#glitter {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 6;
+  animation: glitterEffect 1.2s ease-out;
+}
+
+@keyframes glitterEffect {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-20px);
+  }
+}
+
 /* 버튼 */
 button {
   position: absolute;
@@ -120,4 +288,60 @@ button img {
   width: 6.1vw;
   height: auto;
   z-index: 5;
+}
+
+/* 변화 텍스트 기본 스타일 */
+.stat-change {
+  position: absolute;
+  font-size: 2.2vw;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#health-change {
+  top: 40%;
+  left: 13%;
+  color: #ff009f; /* 체력 변화는 빨간색으로 */
+  text-shadow: 3px 3px 8px #cb007d97;
+}
+
+#exp-change {
+  top: 40%;
+  right: 13%;
+  color: #ffca00; /* 경험치 변화는 노란색으로 */
+  text-shadow: 3px 3px 8px #ffa600e6;
+}
+
+/* 애니메이션 효과 */
+.show-change {
+  opacity: 1;
+  transform: translateY(-20px); /* 위로 살짝 이동 */
+}
+
+/* 글리터 효과 */
+.glitter-effect {
+  position: absolute;
+  bottom: 55%; /* 캐릭터 발 근처에 위치시키기 위해 조정 */
+  left: 20%; /* 중앙에 위치 */
+  transform: translateX(-80%) scale(1);
+  width: 15%; /* 적절한 크기로 설정 */
+  z-index: 3; /* 캐릭터보다 앞쪽에 나타나도록 */
+  opacity: 1;
+}
+
+/* 글리터 상승 애니메이션 */
+@keyframes glitter-rise {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1); /* 크기 고정 */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -20px) scale(1); /* 크기 고정 */
+  }
+}
+
+.glitter-effect.show {
+  animation: glitter-rise 1.2s forwards;
 }

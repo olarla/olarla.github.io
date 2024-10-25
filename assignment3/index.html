@@ -3,18 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Idol Raising Simulation</title>
+    <title>Kawaii Mandu Star</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="imgbox">
-      <!-- 배경 이미지 -->
+    <!-- 게임 화면 -->
+    <div class="imgbox" id="game-screen">
+      <!-- 배경 이미지 (게임 배경) -->
       <img
         src="image/bg1.png"
         alt="Game Background"
         id="background"
         class="background"
       />
+
+      <!-- 게임 시작 페이지 팝업 -->
+      <div id="start-page" class="popup start-popup">
+        <img src="image/startpg.png" alt="Start Page" class="start-image" />
+        <button id="play-button" class="start-button">
+          <img src="image/playbutton.png" alt="Play Button" />
+        </button>
+        <button id="how-button" class="start-button">
+          <img src="image/howbutton.png" alt="How To Button" />
+        </button>
+      </div>
+
+      <div id="audio-prompt" class="audio-prompt">
+        <p>Please enable BGM!</p>
+        <button id="enable-audio" class="audio-button">►</button>
+      </div>
+
+      <!-- How To 설명 팝업 -->
+      <div id="how-to-popup" class="popup" style="display: none">
+        <div class="popup-content">
+          <button id="close-how" class="popup-close">&times;</button>
+          <h2>Welcome, Idol Manager!</h2>
+          <p>
+            Your mission is to guide a trainee from their first steps to
+            stardom! Choose activities wisely to manage Stamina and earn
+            Experience Points (EXP) to level up your idol. With each level-up,
+            the idol’s outfit changes, reflecting their growing status!
+          </p>
+          <ul>
+            <li>
+              <strong>1. Key Stats</strong>
+              <br />
+              -Stamina: Decreases with each activity. If stamina reaches 0, let
+              your idol rest to recover.
+              <br />
+              -EXP: Gain EXP through activities to level up. When EXP reaches
+              100, your idol levels up.
+            </li>
+            <li>
+              <strong>2. Activities</strong> <br />
+              Choose from various activities to shape your idol’s career and
+              manage their stats: <br />
+              -Dance Practice: -20 Stamina, +15 EXP <br />-TV Appearance: -15
+              Stamina, +15 EXP <br />-Recording Session: -10 Stamina, +20 EXP
+              <br />
+              -Concert Performance: -25 Stamina, +25 EXP
+            </li>
+            <li>
+              <strong>3. Resting</strong> <br />
+              Is stamina low? Click the Rest button to recover +50 Stamina.
+            </li>
+            <li>
+              <strong>4. Leveling Up</strong> <br />
+              When EXP hits 100, your idol levels up. Each level brings a fresh
+              look!
+            </li>
+            <li>
+              <strong>5. Goal</strong> <br />
+              Help your idol reach Level 4! Use strategies to maintain stamina
+              and maximize EXP. <br />Are you ready to launch a new star?
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <!-- 상단 상태바 (체력/경험치) -->
       <div class="status-bar">
@@ -26,12 +91,26 @@
           <div id="exp-inner" class="exp-inner"></div>
           <!-- 경험치 바 -->
         </div>
-        <div class="level-text">Lv.1</div>
+        <div id="level-text" class="level-text">Lv.1</div>
         <!-- 레벨 텍스트 -->
       </div>
 
+      <!-- 체력 변화 텍스트 -->
+      <div id="health-change" class="stat-change"></div>
+      <!-- 경험치 변화 텍스트 -->
+      <div id="exp-change" class="stat-change"></div>
+
       <!-- 캐릭터 이미지 -->
       <img src="image/lv1.png" alt="Character" id="character" />
+
+      <!-- 글리터 효과 요소 추가 -->
+      <img
+        src="image/lvglitter.png"
+        alt="Glitter Effect"
+        id="glitter"
+        class="glitter-effect"
+        style="display: none"
+      />
 
       <!-- 버튼들 -->
       <div class="bottom-bar">
