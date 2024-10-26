@@ -320,28 +320,17 @@ button img {
 }
 
 /* 글리터 효과 */
-.glitter-effect {
+#glitter {
   position: absolute;
-  bottom: 55%; /* 캐릭터 발 근처에 위치시키기 위해 조정 */
-  left: 20%; /* 중앙에 위치 */
-  transform: translateX(-80%) scale(1);
+  bottom: 30%; /* 캐릭터 발 근처에 위치시키기 위해 조정 */
+  left: 42%;
+  transform: translateX(-50%); /* 크기 고정 */
   width: 15%; /* 적절한 크기로 설정 */
   z-index: 3; /* 캐릭터보다 앞쪽에 나타나도록 */
   opacity: 1;
 }
 
-/* 글리터 상승 애니메이션 */
-@keyframes glitter-rise {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1); /* 크기 고정 */
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -20px) scale(1); /* 크기 고정 */
-  }
-}
-
 .glitter-effect.show {
-  animation: glitter-rise 1.2s forwards;
+  opacity: 1;
+  transition: opacity 1.2s ease;
 }

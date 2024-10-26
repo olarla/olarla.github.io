@@ -159,6 +159,7 @@ function showStatChange(value, element) {
     element.classList.remove("show-change");
   }, 1200);
 }
+
 function triggerGlitter() {
   const glitterEffect = document.getElementById("glitter");
   glitterEffect.style.display = "block";
