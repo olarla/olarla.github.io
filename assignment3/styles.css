@@ -106,6 +106,7 @@ playful theme, enhancing interactivity.
   opacity: 0.9;
 }
 
+/* 반짝임 애니메이션 */
 @keyframes sparkle {
   0% {
     filter: brightness(1);
@@ -178,6 +179,23 @@ Central heading with contrasting pink for the How To popup to ensure readability
   color: #ff1493;
 }
 
+.popup-content p {
+  font-size: 1.1vw;
+  margin-bottom: 2vh;
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2vw;
+}
+
+.popup-content ul li {
+  margin-bottom: 1vh;
+  text-align: left;
+  margin-bottom: 2vh;
+}
+
 /* 
 Close button (X) is styled in pink to match theme colors and to allow quick dismissals. Transition for hover color 
 gives immediate feedback for usability and interaction.
@@ -209,6 +227,149 @@ Each level unlocks different appearances, a visual reward system to motivate pro
   transform: translateX(-50%);
   width: 17%;
   z-index: 2;
+}
+
+.health-bar {
+  position: absolute;
+  top: 33%;
+  left: 10.1%;
+  width: 2.1%;
+  height: 46%;
+  background-color: transparent;
+  z-index: 3;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.health-inner {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff009f;
+}
+
+.exp-bar {
+  position: absolute;
+  top: 33%;
+  right: 10.4%;
+  width: 2.1%;
+  height: 46%;
+  background-color: transparent;
+  z-index: 3;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.exp-inner {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #ffca00;
+}
+
+.level-text {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4vw;
+  color: palegoldenrod;
+  text-shadow: 2px 2px 6px #ffca00;
+  font-weight: bold;
+  z-index: 4;
+}
+
+/* Glitter effect - level up */
+#glitter {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 6;
+  animation: glitterEffect 1.2s ease-out;
+}
+
+@keyframes glitterEffect {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-20px);
+  }
+}
+
+button {
+  position: absolute;
+  bottom: 9.5%;
+  z-index: 4;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+#dance-button {
+  left: 33.6%;
+}
+#tv-button {
+  left: 40.1%;
+}
+#record-button {
+  left: 46.6%;
+}
+#concert-button {
+  left: 53.1%;
+}
+#sleep-button {
+  left: 59.6%;
+}
+
+button img {
+  width: 6.1vw;
+  height: auto;
+  z-index: 5;
+}
+
+.stat-change {
+  position: absolute;
+  font-size: 2.2vw;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#health-change {
+  top: 40%;
+  left: 13%;
+  color: #ff009f;
+  text-shadow: 3px 3px 8px #cb007d97;
+}
+
+#exp-change {
+  top: 40%;
+  right: 13%;
+  color: #ffca00;
+  text-shadow: 3px 3px 8px #ffa600e6;
+}
+
+/* Animation effect */
+.show-change {
+  opacity: 1;
+  transform: translateY(-20px);
 }
 
 /* 
