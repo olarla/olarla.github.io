@@ -21,7 +21,7 @@ const characters = {
 
 // Music files provide auditory feedback and enhance immersion
 const gameBgm = new Audio("music/gamebgm.mp3"); // Background music during gameplay
-gameBgm.volume = 0.5; // Set volume lower to avoid overpowering
+gameBgm.volume = 0.7; // Set volume lower to avoid overpowering
 gameBgm.loop = true; // Continuous background loop for a consistent experience
 
 const levelUpSound = new Audio("music/levelup.wav"); // Level-up sound for positive reinforcement
@@ -29,7 +29,7 @@ const buttonSound = new Audio("music/button.mp3"); // Button sound on action to 
 buttonSound.volume = 0.5;
 
 const popupBgm = new Audio("music/popupbgm.mp3"); // Intro music for the start screen
-popupBgm.volume = 0.5;
+popupBgm.volume = 0.7;
 popupBgm.loop = true; // Looping helps maintain continuity on the intro screen
 
 // BGM activation button, providing control to start music, respecting user preference
