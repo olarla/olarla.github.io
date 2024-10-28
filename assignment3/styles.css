@@ -1,3 +1,14 @@
+/* 
+The game is designed to evoke nostalgia by using a pixel art style. This retro choice not only appeals to fans of classic games 
+but also keeps the visuals simple and straightforward, making it approachable for users of all ages. The color scheme uses bright, 
+vibrant colors to capture the playful and energetic nature of the game, as well as to ensure key elements like health and experience 
+bars stand out against the background.
+*/
+
+/* 
+Body styling: chosen "Pixelify Sans" as the main font for a clean, nostalgic look, complementing the pixelated aesthetic of the 
+game's visuals. The weight and style adjustments ensure legibility without compromising the vintage style.
+*/
 body {
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
@@ -5,7 +16,10 @@ body {
   font-style: normal;
 }
 
-/* 부모 요소 (이미지 상자) */
+/* 
+The .imgbox container fills the viewport for an immersive, full-screen game experience, helping players stay focused on the game. 
+This structure keeps all key game elements centered and within reach, creating a seamless experience on any screen size.
+*/
 .imgbox {
   position: relative;
   width: 100vw;
@@ -13,17 +27,24 @@ body {
   overflow: hidden;
 }
 
-/* 배경 이미지를 화면에 맞게 꽉 채움 */
+/* 
+Background image fills the entire screen, creating a rich game world for players to engage with. The use of 
+object-fit: cover ensures the image maintains its aspect ratio while completely covering the viewport, 
+preventing distracting empty spaces on different screen sizes.
+*/
 #background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 화면 비율에 맞춰 이미지를 꽉 채움 */
+  object-fit: cover;
 }
 
-/* 팝업 창 기본 스타일 */
+/* 
+Popup styling for initial game menus, including the play and how-to buttons, helps players get familiar with the game easily. 
+The centered design ensures easy access, while the high z-index guarantees the popup appears above other elements.
+*/
 .popup {
   position: absolute;
   top: 50%;
@@ -32,13 +53,19 @@ body {
   z-index: 5;
 }
 
-/* 팝업 내부 이미지 */
+/* 
+The start image fills the majority of the popup space, instantly engaging users. The size is increased to 170% to provide an 
+immersive welcome experience, ensuring the player’s first impression is strong and exciting.
+*/
 .start-image {
   width: 170%;
   height: auto;
 }
 
-/* 시작 버튼과 How To 버튼 */
+/* 
+Start buttons styled with opacity transitions give subtle feedback to the player’s interaction, enhancing usability. 
+A nostalgic pink hue was chosen to reflect the cheerful game tone and match the character's theme colors.
+*/
 .start-button {
   background: none;
   border: none;
@@ -46,42 +73,52 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* Play 버튼 위치 */
+/* 
+Play button positioned centrally within the popup, reinforcing the primary action. This central position encourages 
+players to begin immediately without distraction.
+*/
 #play-button {
   position: absolute;
-  bottom: 17%; /* 팝업 내부에서 아래쪽에 배치 */
-  left: 50%; /* Play 버튼을 중앙에 배치 */
+  bottom: 17%;
+  left: 50%;
 }
 
-/* How To 버튼 위치 */
+/* 
+How To button aligned right, placed near Play to maintain symmetry and easy accessibility for new players needing guidance.
+*/
 #how-button {
   position: absolute;
-  bottom: 17%; /* 팝업 내부에서 Play 버튼과 동일한 높이에 배치 */
-  left: 100%; /* Play 버튼 오른쪽에 배치 */
+  bottom: 17%;
+  left: 100%;
 }
 
 .start-button img {
-  width: 12vw; /* 버튼 이미지 크기 */
+  width: 12vw;
   height: auto;
 }
 
-/* Hover 애니메이션 효과 */
+/* 
+Hover effect using sparkle animation adds a whimsical quality to the buttons. This choice aligns with the game’s 
+playful theme, enhancing interactivity.
+*/
 .start-button:hover img {
   animation: sparkle 0.6s infinite alternate;
   opacity: 0.9;
 }
 
-/* 반짝임 애니메이션 */
 @keyframes sparkle {
   0% {
     filter: brightness(1);
   }
   100% {
-    filter: brightness(1.5); /* 밝기가 살짝 증가 */
+    filter: brightness(1.5);
   }
 }
 
-/* 오디오 메시지 및 버튼 스타일 */
+/* 
+The audio prompt informs users to enable background music, making it easy for users to know what actions 
+are available and where to find them. Positioned at the bottom to avoid interfering with main game visuals.
+*/
 .audio-prompt {
   position: absolute;
   bottom: 7%;
@@ -94,6 +131,10 @@ body {
   font-size: 2.5vh;
 }
 
+/* 
+Audio button uses a rounded shape and bright color for visibility. This button size and positioning align with 
+the rest of the game’s visual language, keeping it inviting and easy to spot.
+*/
 .audio-button {
   position: absolute;
   top: 22%;
@@ -106,17 +147,20 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  width: 2.5vw; /* 버튼 크기 설정 */
-  height: 2.5vw; /* 버튼 크기 설정 (정사각형) */
+  width: 2.5vw;
+  height: 2.5vw;
 }
 
-/* How To 팝업 스타일 */
+/* 
+How To popup serves as a tutorial. Its semi-transparent background adds a visual layer without obscuring the main screen, 
+keeping the player’s focus intact while learning gameplay elements.
+*/
 .popup-content {
   position: absolute;
   transform: translate(-18%, -48%);
   width: 60vw;
   height: 70vh;
-  background-color: rgba(255, 255, 255, 0.8); /* 배경 박스 추가 */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 2vw;
   border-radius: 15px;
   box-shadow: 0 8px 8px #ff009f;
@@ -125,30 +169,19 @@ body {
   margin-bottom: 2vh;
 }
 
+/* 
+Central heading with contrasting pink for the How To popup to ensure readability and match the game’s theme. 
+*/
 .popup-content h2 {
   font-size: 3.2vw;
   margin-bottom: 2vh;
   color: #ff1493;
 }
 
-.popup-content p {
-  font-size: 1.1vw;
-  margin-bottom: 2vh;
-}
-
-.popup-content ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.2vw;
-}
-
-.popup-content ul li {
-  margin-bottom: 1vh;
-  text-align: left;
-  margin-bottom: 2vh;
-}
-
-/* X 버튼 스타일 */
+/* 
+Close button (X) is styled in pink to match theme colors and to allow quick dismissals. Transition for hover color 
+gives immediate feedback for usability and interaction.
+*/
 .popup-close {
   position: absolute;
   top: -35vw;
@@ -165,175 +198,30 @@ body {
   color: #e6008e;
 }
 
-/* 캐릭터 이미지 위치 */
+/* 
+Character image positioning simulates the character standing in the middle of the game screen, focusing the player’s attention. 
+Each level unlocks different appearances, a visual reward system to motivate progress.
+*/
 #character {
   position: absolute;
-  bottom: 30%; /* 캐릭터를 화면 중간 위에 위치 */
+  bottom: 30%;
   left: 50%;
   transform: translateX(-50%);
-  width: 17%; /* 캐릭터 크기 */
+  width: 17%;
   z-index: 2;
 }
 
-.health-bar {
-  position: absolute;
-  top: 33%;
-  left: 10.1%; /* 체력바를 화면의 왼쪽 5%에 위치 */
-  width: 2.1%;
-  height: 46%; /* 체력바 높이를 화면 비율에 맞게 50%로 */
-  background-color: transparent;
-  z-index: 3;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-/* 체력 게이지 채우기 */
-.health-inner {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ff009f;
-}
-
-/* 경험치 바 (세로) */
-.exp-bar {
-  position: absolute;
-  top: 33%;
-  right: 10.4%; /* 경험치바를 화면의 오른쪽 5%에 위치 */
-  width: 2.1%;
-  height: 46%;
-  background-color: transparent;
-  z-index: 3;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-/* 경험치 게이지 채우기 */
-.exp-inner {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 0%;
-  background-color: #ffca00;
-}
-
-/* 레벨 표시 */
-.level-text {
-  position: absolute;
-  top: 14%; /* 상단 중앙에 레벨 표시 */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 4vw; /* 레벨 텍스트 크기를 뷰포트 너비에 맞춤 */
-  color: palegoldenrod;
-  text-shadow: 2px 2px 6px #ffca00;
-  font-weight: bold;
-  z-index: 4;
-}
-
-/* 레벨업 시 글리터 효과 */
+/* 
+Glitter effect shows at level-up, celebrating the player’s progress. Positioned above the character for a visually 
+satisfying effect that signifies achievement.
+*/
 #glitter {
   position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  z-index: 6;
-  animation: glitterEffect 1.2s ease-out;
-}
-
-@keyframes glitterEffect {
-  0% {
-    opacity: 0;
-    transform: scale(0.5) translateY(20px);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.5) translateY(-20px);
-  }
-}
-
-/* 버튼 */
-button {
-  position: absolute;
-  bottom: 9.5%;
-  z-index: 4;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-button:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
-}
-
-/* 버튼 위치 */
-#dance-button {
-  left: 33.6%;
-}
-#tv-button {
-  left: 40.1%;
-}
-#record-button {
-  left: 46.6%;
-}
-#concert-button {
-  left: 53.1%;
-}
-#sleep-button {
-  left: 59.6%;
-}
-
-/* 버튼 아이콘 */
-button img {
-  width: 6.1vw;
-  height: auto;
-  z-index: 5;
-}
-
-/* 변화 텍스트 기본 스타일 */
-.stat-change {
-  position: absolute;
-  font-size: 2.2vw;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-#health-change {
-  top: 40%;
-  left: 13%;
-  color: #ff009f; /* 체력 변화는 빨간색으로 */
-  text-shadow: 3px 3px 8px #cb007d97;
-}
-
-#exp-change {
-  top: 40%;
-  right: 13%;
-  color: #ffca00; /* 경험치 변화는 노란색으로 */
-  text-shadow: 3px 3px 8px #ffa600e6;
-}
-
-/* 애니메이션 효과 */
-.show-change {
-  opacity: 1;
-  transform: translateY(-20px); /* 위로 살짝 이동 */
-}
-
-/* 글리터 효과 */
-#glitter {
-  position: absolute;
-  bottom: 30%; /* 캐릭터 발 근처에 위치시키기 위해 조정 */
+  bottom: 30%;
   left: 42%;
-  transform: translateX(-50%); /* 크기 고정 */
-  width: 15%; /* 적절한 크기로 설정 */
-  z-index: 3; /* 캐릭터보다 앞쪽에 나타나도록 */
+  transform: translateX(-50%);
+  width: 15%;
+  z-index: 3;
   opacity: 1;
 }
 
