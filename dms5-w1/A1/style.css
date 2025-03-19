@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-:root {
-  --col01: black;
-  --col02: pink;
-  --col03: yellow;
-  --col04: blue;
-  --border: single 1rem var(--col02);
-}
-
 body {
   font-family: "Merriweather";
 }
