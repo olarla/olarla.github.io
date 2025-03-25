@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neumorphism Interactive Q&A</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="slider">
+      <section id="title" class="slide">
+        <h1>Neumorphism.io - Creative Software Analysis</h1>
+        <p>Written by Dayun Cho (s3926872)</p>
+        <div class="nav-btns"><a href="#q1">Start</a></div>
+      </section>
+
+      <section id="q1" class="slide">
+        <div class="card">
+          <p class="card-title">1. What genre of creative software?</p>
+          <p class="card-body">
+            I believe Neumorphism.io belongs to an interactive generative design
+            tool, allowing playful exploration of CSS shadows and depth through
+            direct manipulation of parameters.
+          </p>
+        </div>
+        <div class="nav-btns">
+          <a href="#title">Prev</a><a href="#q2">Next</a>
+        </div>
+      </section>
+
+      <section id="q2" class="slide">
+        <p>Similar tools I found include:</p>
+        <ul>
+          <li>
+            <a href="https://cssgradient.io/">CSS Gradient</a> - Visualizes
+            gradients live like Neumorphism shows shadows.
+          </li>
+          <li>
+            <a href="https://hype4.academy/tools/glassmorphism-generator"
+              >Glassmorphism Generator</a
+            >
+            - Lets users create translucent layers, similar depth manipulation.
+          </li>
+          <li>
+            <a href="https://www.figma.com/">Figma Shadow Tools</a> - Allows
+            fine shadow control for UI, like this generator does visually.
+          </li>
+        </ul>
+        <div class="nav-btns"><a href="#q1">Prev</a><a href="#q3">Next</a></div>
+      </section>
+
+      <section id="q3" class="slide">
+        <div class="card">
+          <div class="bg">
+            <p>
+              <strong>3. Interactivity</strong><br />The real-time response of
+              changing shadows, blur, and color feels intuitive and lets users
+              explore depth like sketching ideas instantly.
+            </p>
+          </div>
+          <div class="blob"></div>
+        </div>
+        <div class="nav-btns"><a href="#q2">Prev</a><a href="#q4">Next</a></div>
+      </section>
+
+      <section id="q4" class="slide">
+        <p>
+          <strong>4. Genre Alignment</strong><br />It fits because users control
+          visual styles directly.
+          <br />
+          <br />
+          <button
+            class="click-btn"
+            onclick="document.querySelector('#reveal4').style.display='block'"
+          >
+            Reveal More
+          </button>
+        </p>
+        <div id="reveal4" style="display: none">
+          Its minimalist UI and focus on CSS properties like shadow and blur
+          aligns it with creative coding and design playgrounds.
+        </div>
+        <div class="nav-btns">
+          <a href="#q3">Prev</a><a href="#loading">Next</a>
+        </div>
+      </section>
+
+      <section id="loading" class="slide">
+        <div class="loading"></div>
+        <div class="nav-btns"><a href="#q4">Prev</a><a href="#q5">Next</a></div>
+      </section>
+
+      <section id="q5" class="slide">
+        <div class="simple-card">
+          <p>
+            <strong>5. Novel Features</strong><br />Unlike other tools,
+            Neumorphism.io lets users blend multiple shadow layers with blur
+            directly in one interface. This direct manipulation is educational
+            and fun.
+          </p>
+        </div>
+        <div class="nav-btns">
+          <a href="#loading">Prev</a><a href="#q6">Next</a>
+        </div>
+      </section>
+
+      <section id="q6" class="slide">
+        <p>
+          <strong>6. Missing Features</strong><br />I think adding responsive
+          previews or export to Codepen would improve real-world usability.
+        </p>
+        <div class="agree-wrapper">
+          <span>Do you Agree?</span><br />
+          <br />
+          <label class="container">
+            <input type="checkbox" />
+            <div class="checkmark"></div>
+          </label>
+        </div>
+        <div class="nav-btns"><a href="#q5">Prev</a><a href="#q7">Next</a></div>
+      </section>
+
+      <section id="q7" class="slide">
+        <div class="hover-box">
+          <strong>Hover to see target audience</strong>
+          <div class="hover-reveal">
+            Web designers, UI/UX learners, and creative coders benefit most by
+            testing visual effects live without coding.
+          </div>
+        </div>
+        <div class="nav-btns"><a href="#q6">Prev</a><a href="#q8">Next</a></div>
+      </section>
+
+      <section id="q8" class="slide">
+        <div class="cookie-card">
+          <span class="title">8. Annoying / Boring Aspects</span>
+          <p class="description">
+            Repeating shadow play without new goals can bore users. I wish it
+            had challenges or templates to maintain engagement.
+          </p>
+        </div>
+        <div class="nav-btns"><a href="#q7">Prev</a><a href="#q9">Next</a></div>
+      </section>
+
+      <section id="q9" class="slide">
+        <div class="loader">
+          <div class="pac-man"></div>
+          <div class="point p1"></div>
+          <div class="point p2"></div>
+        </div>
+        <p>
+          <strong>9. Enjoyable Aspects</strong><br />Seeing instant results and
+          the subtlety of shadows responding to my tweaks made me feel in
+          control and learn better.
+        </p>
+        <div class="nav-btns">
+          <a href="#q8">Prev</a><a href="#video">Next</a>
+        </div>
+      </section>
+
+      <section id="video" class="slide">
+        <div class="card video-card">
+          <div class="bg">
+            <video controls width="500">
+              <source src="a1 screen record.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div class="nav-btns">
+          <a href="#q9">Prev</a><a href="#title">Restart</a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

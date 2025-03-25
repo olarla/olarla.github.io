@@ -1,5 +1,205 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: "Merriweather";
+  margin: 0;
+  font-family: "Courier New", monospace;
+  background-color: #222;
+  color: #eee;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-type: x mandatory;
+}
+
+section {
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  background-image: url("sea_px_img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #002233;
+  position: relative;
+}
+
+.content {
+  max-width: 900px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.character {
+  position: absolute;
+  animation: float 6s ease-in-out infinite alternate;
+  image-rendering: pixelated;
+}
+
+/* 🐟 개체별 고유 크기 */
+.phytoplankton {
+  width: 20px;
+}
+.krill {
+  width: 60px;
+}
+.anchovy {
+  width: 110px;
+}
+.mackerel {
+  width: 190px;
+}
+.squid {
+  width: 250px;
+}
+.seabass {
+  width: 370px;
+}
+.shark {
+  width: 600px;
+}
+.carcass {
+  width: 500px;
+}
+.bacteria {
+  width: 25px;
+}
+
+/* 기본 부유 애니메이션 */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 버튼 디자인 */
+a.next-btn,
+a.prev-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  background: #1e90ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+  width: fit-content;
+  max-width: 200px;
+  white-space: nowrap;
+  margin: 20px auto;
+}
+
+a.next-btn:hover,
+a.prev-btn:hover {
+  background: #187bcd;
+}
+
+/* ✅ 페이지별 랜덤 배치 (예시) */
+#q1 .scene .character:nth-child(1) {
+  top: 15%;
+  left: 20%;
+}
+#q1 .scene .character:nth-child(2) {
+  top: 40%;
+  left: 50%;
+}
+#q1 .scene .character:nth-child(3) {
+  top: 60%;
+  left: 70%;
+}
+
+#q2 .scene .character:nth-child(1) {
+  top: 25%;
+  left: 45%;
+}
+#q2 .scene .character:nth-child(2) {
+  top: 50%;
+  left: 30%;
+}
+#q2 .scene .character:nth-child(3) {
+  top: 65%;
+  left: 65%;
+}
+
+#q3 .scene .character:nth-child(1) {
+  top: 20%;
+  left: 50%;
+}
+#q3 .scene .character:nth-child(2) {
+  top: 50%;
+  left: 60%;
+}
+
+#q4 .scene .character:nth-child(1) {
+  top: 30%;
+  left: 20%;
+}
+#q4 .scene .character:nth-child(2) {
+  top: 55%;
+  left: 60%;
+}
+
+#q5 .scene .character:nth-child(1) {
+  top: 20%;
+  left: 30%;
+}
+#q5 .scene .character:nth-child(2) {
+  top: 60%;
+  left: 70%;
+}
+
+#q6 .scene .character:nth-child(1) {
+  top: 40%;
+  left: 50%;
+}
+
+#q7 .scene .character:nth-child(1) {
+  top: 30%;
+  left: 45%;
+}
+
+#q8 .scene .character:nth-child(1) {
+  top: 60%;
+  left: 40%;
+}
+
+#q9 .scene .character:nth-child(1) {
+  top: 30%;
+  left: 20%;
+}
+#q9 .scene .character:nth-child(2) {
+  top: 55%;
+  left: 70%;
 }
