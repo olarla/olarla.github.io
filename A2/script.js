@@ -1,4 +1,7 @@
 // script.js
+window.addEventListener("DOMContentLoaded", () => {
+  // Konva Stage 설정 등 모든 코드 여기 안에!
+});
 const width = window.innerWidth;
 const height = window.innerHeight;
 
