@@ -1,0 +1,15 @@
+/* style.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background: radial-gradient(circle at center, #fefefe, #e0e0ff);
+  }
+  
+  #container {
+    width: 100vw;
+    height: 100vh;
+    touch-action: none; /* prevents browser gestures like zoom/scroll */
+  }
+  
