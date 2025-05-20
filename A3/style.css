@@ -89,5 +89,20 @@ body {
   width: 100vw;
   height: 100vh;
   pointer-events: none; /* 클릭 방해 안 하게 */
-  z-index: 50; /* 인터랙션보다 위로 */
+  z-index: 2; /* 인터랙션보다 위로 */
+}
+
+#motion-feedback {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  font-family: "Tangerine", cursive;
+  font-size: 28px;
+  background: rgb(67, 83, 135);
+  padding: 10px 16px;
+  border-radius: 16px;
+  display: none;
+  z-index: 999;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }

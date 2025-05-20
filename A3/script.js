@@ -9,16 +9,7 @@ const stage = new Konva.Stage({
 
 // Motion Echo Meter 피드백 표시용 DOM 생성
 const feedbackDisplay = document.createElement("div");
-feedbackDisplay.style.position = "absolute";
-feedbackDisplay.style.top = "20px";
-feedbackDisplay.style.left = "20px";
-feedbackDisplay.style.color = "white";
-feedbackDisplay.style.fontSize = "20px";
-feedbackDisplay.style.fontFamily = "sans-serif";
-feedbackDisplay.style.background = "rgba(0,0,0,0.5)";
-feedbackDisplay.style.padding = "8px 14px";
-feedbackDisplay.style.borderRadius = "12px";
-feedbackDisplay.style.display = "none";
+feedbackDisplay.id = "motion-feedback";
 document.body.appendChild(feedbackDisplay);
 
 function showMotionFeedback(speed) {
